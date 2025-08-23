@@ -1,3 +1,29 @@
+🔐 Windows Security Monitoring with Splunk
+
+This project is a hands-on SIEM (Security Information and Event Management) dashboard built in Splunk to monitor Windows Security, System, and Application logs.
+
+It provides real-time visibility into:
+
+Failed logons (4625) → detect brute-force or suspicious login attempts
+
+Successful logons (4624) → establish a baseline of normal activity
+
+Account lockouts (4740) → highlight potential security incidents
+
+Failure reasons, top accounts, and hourly trends → speed up triage and root cause analysis
+
+The dashboard panels are designed to answer:
+
+What is happening right now?
+
+Who is being targeted?
+
+When do spikes occur?
+
+Where are failed attempts coming from?
+
+This repo includes screenshots, SPL queries, and lessons learned — making it a portfolio-ready showcase of applied SIEM and detection engineering skills.
+
 ## 📊 Dashboard Screenshots
 
 ### Failed Login Attempts (EventCode 4625)
