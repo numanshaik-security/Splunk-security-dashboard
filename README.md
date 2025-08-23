@@ -73,3 +73,31 @@ index=winlogs sourcetype=WinEventLog:Security EventCode=4624
 ```spl
 index=winlogs sourcetype=WinEventLog:Security EventCode=4740
 | timechart span=1d count AS Account_Lockouts
+```
+📘 Lessons Learned
+
+I wanted to get hands-on with a SIEM, so I built a Windows security dashboard in Splunk. Along the way I learned:
+
+How to ingest Windows Event Logs (Security, System, Application) and map the fields that matter.
+
+What key event codes mean in practice: 4625 (failed logon), 4624 (successful logon), 4740 (account lockout).
+
+How to write SPL for trends, top-N breakdowns, and hourly patterns that actually help with triage.
+
+How to organize a dashboard so it tells a story: what’s happening, who’s impacted, when it spikes.
+
+I hit a snag with email alerts (scheduler/SMTP). I documented the search logic and left alerting as a follow-up—it’s realistic and I know what to fix next.
+
+Bonus: I’m now much more comfortable using GitHub for documentation and sharing work.
+
+🚀 Future Improvements
+
+Finish the brute-force alert (>=5 failed logons in 5m) with SMTP configured.
+
+Add a Sysmon panel (process creation and network connections) for deeper host visibility.
+
+Correlate 4740 lockouts with the preceding 4625 failures to pinpoint the source workstation.
+
+Add a sample dataset so others can reproduce the visuals without a Windows host.
+
+Export and include a prebuilt dashboard JSON/XML (done) and a small setup script for faster onboarding.
