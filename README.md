@@ -23,3 +23,9 @@
 
 ### Account Lockouts (4740) – Daily Trend
 ![Account Lockouts](Account_Lockouts_Daily_Trend.png)
+-------------------------------------------------------------------------------------------------
+## 🔍 SPL Queries 
+### 1) Failed Login Attempts (EventCode 4625) — Daily Count
+```spl
+index=winlogs sourcetype=WinEventLog:Security EventCode=4625
+| timechart span=1d count AS Failed_Logons
