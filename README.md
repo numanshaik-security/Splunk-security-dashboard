@@ -73,4 +73,3 @@ index=winlogs sourcetype=WinEventLog:Security EventCode=4624
 ```spl
 index=winlogs sourcetype=WinEventLog:Security EventCode=4740
 | timechart span=1d count AS Account_Lockouts
-```
